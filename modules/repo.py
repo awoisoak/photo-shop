@@ -23,7 +23,7 @@ def __getDbImages():
     try:
         # Database information (including hostname and name) is defined in docker-compose file
         cnx = mysql.connector.connect(user='root', password='password',
-                                    host='db',
+                                    host='INSERT_DB_ADDRESS',
                                     database='photosdb')
 
         cursor = cnx.cursor()
