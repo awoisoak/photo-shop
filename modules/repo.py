@@ -4,6 +4,8 @@ from mysql.connector import errorcode
 from pathlib import Path
 
 
+database_url = os.environ.get('DATABASE_URL', 'localhost')
+print ("Database URL from repo: ", database_url)
 
 # Attempt to get the list of images from the Database, 
 # if it can't connect it will grab them from local directory
@@ -23,7 +25,7 @@ def __getDbImages():
     try:
         # Database information (including hostname and name) is defined in docker-compose file
         cnx = mysql.connector.connect(user='root', password='password',
-                                    host='INSERT_DB_ADDRESS',
+                                    host= database_url,
                                     database='photosdb')
 
         cursor = cnx.cursor()
