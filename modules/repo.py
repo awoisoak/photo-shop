@@ -4,7 +4,7 @@ from mysql.connector import errorcode
 from pathlib import Path
 
 
-database_url = os.environ.get('DATABASE_URL', 'localhost')
+database_url = os.environ.get('DATABASE_URL', '127.0.0.1')
 print ("Database URL from repo: ", database_url)
 
 # Attempt to get the list of images from the Database, 
