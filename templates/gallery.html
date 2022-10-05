@@ -11,6 +11,9 @@
 <body>
 <h1 class="page-header">Photography Shop</h1>
 <p align="center" id="label"></p>
+
+<p align="center" id="label">Node: {{ url_for('static', filename=node) }}</p>
+<p align="center" id="label">Socket hostname: {{ url_for('static', filename=socket) }}</p>
 <div class="row">
         {% for image_name in image_names %}
         <div class="col-md-4">
@@ -23,7 +26,7 @@
         {% endfor %}
 </div>
 <script>
-  document.getElementById("label").innerHTML = "Hostname: " + location.hostname;
+  document.getElementById("label").innerHTML = "Location hostname: " + location.hostname;
 </script>
 
 </body>

@@ -1,4 +1,4 @@
-import os, modules.repo as repo, modules.utils as utils
+import os, platform, socket, modules.repo as repo, modules.utils as utils
 from tokenize import Name
 
 from flask import Flask, render_template, send_from_directory
@@ -17,7 +17,7 @@ def send_image(filename):
 @app.route('/gallery')
 def get_gallery():
     image_names = repo.getImages()
-    return render_template("gallery.html", image_names=image_names)
+    return render_template("gallery.html", image_names=image_names, node=platform.node(), socket=socket.gethostname())
 
 
 if __name__ == "__main__":
