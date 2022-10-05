@@ -17,7 +17,7 @@ def send_image(filename):
 @app.route('/gallery')
 def get_gallery():
     image_names = repo.getImages()
-    return render_template("gallery.html", image_names=image_names, node=platform.node(), socket=socket.gethostname())
+    return render_template("gallery.html", image_names=image_names, node=platform.node())
 
 
 if __name__ == "__main__":
