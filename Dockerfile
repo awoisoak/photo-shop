@@ -13,6 +13,7 @@ RUN apt install python3-pip -y
 RUN apt install curl -y
 RUN apt install mysql-client -y
 RUN apt install libmysqlclient-dev -y
+RUN apt install dnsutils -y
 
 # Copy source code to working directory
 COPY . /opt/photo_shop
