@@ -10,14 +10,23 @@ print ("Database URL: ", database_url)
 
 # Attempt to get the list of images from the Database, 
 # if it can't connect it will grab them from local directory
+# return a list with list[boolean, string..] where:
+#   boolean: true if images were retrived from db, false otherwise
+#   string..: images names
 def getImages():
+    response = []
     images = __getDbImages()
     if images:
         utils.printWarning ("images retrieved from DB")
-        return images
+        response.insert(0, "true")
+        response.insert(1, images)
+        return response
     else:
         utils.printWarning ("images retrieved locally")
-        return __getLocalImages()    
+        images = __getLocalImages()
+        response.insert(0, "false")
+        response.insert(1, images)
+        return response
 
 
 # Get the list of images from the database (which runs in another container)

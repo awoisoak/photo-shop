@@ -13,6 +13,13 @@
 <p align="center" id="label"></p>
 <p align="center" id="label">Node: {{ url_for('static', filename=node) }}</p>
 
+  {% if db_connected == true %}
+    <font color="green"> <p align="center" id="label" >Not connected to DB</p></font>
+  {% else %}
+    <font color="red"> <p align="center" id="label" >Not connected to DB</p></font>
+  </hr>
+  {% endif %} 
+
 <div class="row">
         {% for image_name in image_names %}
         <div class="col-md-4">

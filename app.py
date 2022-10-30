@@ -16,9 +16,12 @@ def send_image(filename):
 
 @app.route('/gallery')
 def get_gallery():
-    image_names = repo.getImages()
-    return render_template("gallery.html", image_names=image_names, node=platform.node())
-
+    response = repo.getImages()
+    return render_template("gallery.html", 
+            db_connected = response[0],
+            image_names = response[1], 
+            node = platform.node()
+            )
 
 if __name__ == "__main__":
     # Run Flask Application
