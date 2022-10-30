@@ -17,14 +17,14 @@ def getImages():
     response = []
     images = __getDbImages()
     if images:
-        utils.printWarning ("images retrieved from DB")
-        response.insert(0, "true")
+        utils.printSuccess ("images retrieved from DB")
+        response.insert(0, True)
         response.insert(1, images)
         return response
     else:
         utils.printWarning ("images retrieved locally")
         images = __getLocalImages()
-        response.insert(0, "false")
+        response.insert(0, False)
         response.insert(1, images)
         return response
 
