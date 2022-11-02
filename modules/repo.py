@@ -34,7 +34,7 @@ def __getDbImages():
     imageUrls = []
     try:
         # Database information (including hostname and name) is defined in docker-compose file
-        cnx = mysql.connector.connect(user='root', password='password',
+        cnx = mysql.connector.connect(user='user', password='password',
                                     host= database_url,
                                     database='photosdb')
 
