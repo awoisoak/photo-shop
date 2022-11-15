@@ -24,6 +24,12 @@ jobs:
           username: ${{ env.USER }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
+      - name: Extract Docker metadata
+        id: meta
+        uses: docker/metadata-action@v4
+        with:
+          images: ${{ env.DOCKERHUB_REPOSITORY }}
+
       - name: Build and push Docker image
         id: build-and-push
         uses: docker/build-push-action@v3
