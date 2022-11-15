@@ -33,7 +33,7 @@ jobs:
             type=semver,pattern={{revision}}
             # type=semver,pattern={{version}}
             type=semver,pattern=${{ github.event.release.tag_name }}
-            type=sha
+            type=sha,format=long
           labels: |
             photo-shop.title=Photo Shop
             photo-shop.version=${{ github.event.release.tag_name }}  
