@@ -22,7 +22,7 @@ jobs:
         with:
           username: ${{ env.USER }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-
+      # TODO Remove this job if not needed (or add extra tag)
       - name: Extract Docker metadata
         id: meta
         uses: docker/metadata-action@v4
@@ -36,5 +36,5 @@ jobs:
           context: .
           push: true
           tags: |
-            ${{ steps.meta.outputs.tag }}
+            ${{ steps.meta.outputs.tags }}
             latest
