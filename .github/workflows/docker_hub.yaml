@@ -2,7 +2,6 @@ name: Docker
 
 on:
   push:
-    branches: [ "main", "docker_ci" ] #TODO remove docker_ci once tests are done.
 
 env:
   REGISTRY: ghcr.io
@@ -28,8 +27,6 @@ jobs:
         with:
           images: ${{ env.DOCKERHUB_REPOSITORY }}
 
-      # Build and push Docker image with Buildx (don't push on PR)
-      # https://github.com/docker/build-push-action
       - name: Build and push Docker image
         id: build-and-push
         uses: docker/build-push-action@v3
@@ -37,4 +34,3 @@ jobs:
           context: .
           push: true
           tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
