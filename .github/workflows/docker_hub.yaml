@@ -7,7 +7,7 @@ on:
 env:
   REGISTRY: ghcr.io
   USER: awoisoak
-  IMAGE_NAME: ${{ github.repository }}
+  DOCKERHUB_REPOSITORY: ${{ github.repository }}
 jobs:
   build:
 
@@ -26,7 +26,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: ${{ env.USER }}/${{ env.IMAGE_NAME }}
+          images: ${{ env.DOCKERHUB_REPOSITORY }}
 
       - name: Check tags
         run: |
