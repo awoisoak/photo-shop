@@ -2,11 +2,14 @@ name: Docker
 
 on:
   push:
+    branches:
+    - "*"
 
 env:
   REGISTRY: ghcr.io
   USER: awoisoak
   DOCKERHUB_REPOSITORY: ${{ github.repository }}
+  LATEST_TAG: latest
 jobs:
   build:
 
@@ -20,7 +23,7 @@ jobs:
         with:
           username: ${{ env.USER }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-
+      # TODO Remove this job if not needed (or add extra tag)
       - name: Extract Docker metadata
         id: meta
         uses: docker/metadata-action@v4
@@ -33,4 +36,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
+          tags: ${{ steps.meta.outputs.tags }} , ${{ env.DOCKERHUB_REPOSITORY }}
