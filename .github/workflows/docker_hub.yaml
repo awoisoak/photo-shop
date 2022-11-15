@@ -29,10 +29,10 @@ jobs:
           images: ${{ env.DOCKERHUB_REPOSITORY }}
           tags: |
             type=ref,event=branch
-            # type=ref,event=pr
-            # type=semver,pattern={{revision}}
-            # type=semver,pattern={{version}}
-            type=semver,pattern=${{ github.event.release.tag_name }}
+            type=ref,event=pr
+            type=semver,pattern={{revision}}
+            type=semver,pattern={{version}}
+            type=semver,pattern={{ github.event.release.tag_name }}
           labels: |
             photo-shop.title=Photo Shop
             photo-shop.version= '${{ github.event.release.tag_name }}'
