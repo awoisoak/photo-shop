@@ -27,11 +27,7 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: ${{ env.DOCKERHUB_REPOSITORY }}
-          tags: |
-            # type=ref,event=branch
-            type=semver,pattern={{revision}}
-          labels: |
-            photo-shop.title=Photo Shop
+
 
       # - name: Check tags
       #   run: |
