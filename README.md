@@ -6,6 +6,9 @@ Simple web server created with Python and Flask to be used in different [devops 
 
 ![photo-shop](https://user-images.githubusercontent.com/11469990/198861198-b9af6107-7f2f-4533-82f7-02a0fcd72d3b.png)
 
+In `/metrics` endpoint it exposes some [basic metrics](https://github.com/pilosus/flask_prometheus_metrics) that can be scraped by Prometheus.
+
+
 A Docker image is built and uploaded to [Docker Hub](https://hub.docker.com/repository/docker/awoisoak/photo-shop) automatically on every push to the repository.
 
 Use `awoisoak/photo-shop:main` to pull a stable build or 
