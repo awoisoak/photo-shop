@@ -41,7 +41,7 @@ def create_dispatcher() -> DispatcherMiddleware:
 
 if __name__ == "__main__":
     run_simple(
-        "localhost",
+        "0.0.0.0",
         9000,
         create_dispatcher()
     )
