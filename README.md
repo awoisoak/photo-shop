@@ -14,3 +14,11 @@ A Docker image is built and uploaded to [Docker Hub](https://hub.docker.com/repo
 Use `awoisoak/photo-shop:main` to pull a stable build or 
 `awoisoak/photo-shop:latest` to pull the last commit at any branch. 
 If interested on a specific branch it can be pulled as well by using it as a tag.
+
+
+To build the container:
+    
+    docker build . -t awoisoak/photo-shop
+To run it directly from Docker Hub:
+
+    docker run -p 9000:9000 -ti awoisoak/photo-shop

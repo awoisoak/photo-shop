@@ -1,7 +1,7 @@
 # To build the container:
 #   docker build . -t awoisoak/photo-shop
 # To run it directly from docker hub:
-#   docker run -p 9000:9000 --network photo-network -ti awoisoak/photo-shop
+#   docker run -p 9000:9000 -ti awoisoak/photo-shop
 
 # Force platform to avoid issues with Apple silicon processors
 FROM --platform=linux/amd64 ubuntu
